@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de Quinielas</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f8ff; 
+        }
+        h1 {
+            text-align: center;
+            color: #1e3a5f; 
+            margin-bottom: 20px;
+        }
+        #jornada {
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+            width: 90%;
+            max-width: 300px;
+            border-radius: 10px;
+            border: 1px solid #1e3a5f; 
+            background-color: white;
+            color: #1e3a5f; 
+            appearance: none;
+            background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="none" stroke="%231e3a5f" stroke-width=".6" d="M2 0L0 2h4zM2 5L0 3h4z"/></svg>') no-repeat right 10px center;
+            background-size: 10px;
+        }
+        #label{
+            font-size: 16px;
+            font-weight: bold;
+            color: #1a3366;
+        }
+        #jornada:focus {
+            outline: none;
+            border-color: #1a3366;
+        }
+        #cargarQuinielas {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 14px;
+            max-width: 400px !important;
+            border-radius: 12px;
+            background-color: #1e3a5f; 
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #cargarQuinielas:hover {
+            background-color: #1a3366; 
+        }
+        #tablaQuinielas {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        #tablaQuinielas th, #tablaQuinielas td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        #tablaQuinielas th {
+            background-color: #d6eaf8; 
+            color: #1e3a5f; 
+        }
+        #resultadosContainer {
+            margin-top: 20px;
+        }
+        #resultadosContainer div {
+            margin-bottom: 10px;
+        }
+        #resultadosContainer label {
+            margin-right: 10px;
+        }
+        #calcularPuntosForm {
+            display: block;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            max-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #exportarExcel {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #1e3a5f; 
+            color: white;
+            border: none;
+            cursor: pointer;
+            max-width: 600px;
+            height: 50px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+        #exportarExcel:hover {
+            background-color: #1a3366;
+        }
+        .eliminar-btn {
+            background-color: transparent;
+            color: #e74c3c;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-right: 10px; /* Espacio entre el icono y el texto */
+        }
+        .eliminar-btn:hover {
+            color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <h1><i class="fas fa-futbol"></i> Administrador de Quinielas</h1>
+    <label for="jornada" style="display: block; text-align: center;">Seleccionar Jornada:</label>
+    <select id="jornada">
+        <option value="1">Jornada 1</option>
+        <option value="2">Jornada 2</option>
+        <option value="3">Jornada 3</option>
+        <option value="4">Jornada 4</option>
+        <option value="5">Jornada 5</option>
+        <option value="6">Jornada 6</option>
+        <option value="7">Jornada 7</option>
+        <option value="8">Jornada 8</option>
+        <option value="9">Jornada 9</option>
+        <option value="10">Jornada 10</option>
+        <option value="11">Jornada 11</option>
+        <option value="12">Jornada 12</option>
+        <option value="13">Jornada 13</option>
+        <option value="14">Jornada 14</option>
+        <option value="15">Jornada 15</option>
+        <option value="16">Jornada 16</option>
+        <option value="17">Jornada 17</option>
+    </select>
+    <button id="cargarQuinielas">Cargar Quinielas</button>
+    <table id="tablaQuinielas">
+        <thead>
+            <tr>
+                <th>Acciones</th>
+                <th>Nombres</th>
+                <th>Puntos</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <form id="calcularPuntosForm">
+        <h2>Calcular Puntos</h2>
+        <div id="resultadosContainer">
+            <!-- Los inputs para resultados se generarán dinámicamente -->
+        </div>
+        <button id="btnpuntos" type="submit">Calcular Puntos</button>
+    </form>
+    <button id="exportarExcel">Exportar a Excel</button>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
