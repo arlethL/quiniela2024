@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const tablaQuinielasBody = tablaQuinielas.getElementsByTagName('tbody')[0];
 
     const partidosPorJornada = {
+        18: ["Tigres vs Inter Miami", "Monterrey vs Pumas", "Whitecaps vs Tijuana", "Atlanta United vs Santos", "Orlando City vs Atl. San Luis", "Philadelphia vs Cruz Azul", "Pachuca vs Toronto", "St. Louis City SC vs Juárez", "Guadalajara vs LA Galaxy", "Seattle Sounders vs Necaxa"],
         1: ["Querétaro vs Tijuana", "Puebla vs Santos", "FC Juárez vs Atlas", "San Luis vs América", "Tigres vs Necaxa", "Chivas vs Toluca", "Cruz Azul vs Mazatlán", "Pumas vs León", "Pachuca vs Rayados"],
         2: ["América vs Querétaro", "Atlas vs Tigres", "Mazatlán vs Atlético de San Luis", "Tijuana vs Chivas", "Necaxa vs Puebla", "León vs Pachuca", "Toluca vs Juárez FC", "Santos vs Pumas", "Rayados vs Cruz Azul"],
         3: ["Querétaro vs Chivas", "Atlas vs Santos", "Cruz Azul vs Tijuana", "Puebla vs León", "Juárez vs Pumas", "Toluca vs Mazatlán", "Pachuca vs Atlético de San Luis", "Necaxa vs Rayados", "Tigres vs América"],
